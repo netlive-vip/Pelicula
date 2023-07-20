@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Super Mario Bros. La Película (AA) (2023)</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button-container button {
+      padding: 10px;
+      font-size: 20px;
+      margin: 5px;
+      border: none;
+      color: black;
+      cursor: pointer;
+    }
+
+    .button-container .ver {
+      margin-left: 20px;
+      background-color: rgb(192, 192, 255);
+      color: black;
+    }
+
+    .button-container .descargar {
+      background-color: rgb(255, 192, 192);
+      color: black;
+    }
+
+    .title button {
+      background-color: rgb(192, 255, 192);
+      color: black;
+    }
+
+    .portada img {
+      margin-top: 20px;
+      width: 200px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .movie-info {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">
+    <h1>Super Mario Bros. La Película (AA) (2023)</h1>
+    <button onclick="redirigir('OSTWALD', 'Peliculas', 0)">Página Anterior</button>
+  </div>
+
+  <div class="portada">
+    <img src="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Portada%29%20%282D%29.jpg">
+  </div>
+
+  <div class="movie-info">
+    <div class="button-container">
+      <h4>(Película) (2D)</h4>
+      <button class="ver" onclick="window.location.href='https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4'">Ver</button>
+      <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4" download>
+        <button class="descargar">Descargar</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function redirigir(pageId, peliculaId, error) {
+      if (error === 0) {
+        window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + peliculaId;
+      } else {
+        window.location.href = "https://ostwald-ro.github.io/Error/" + error;
+      }
+    }
+  </script>
+</body>
+</html>
