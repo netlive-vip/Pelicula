@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Juegos de OSTWALD</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 20px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      color: white;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: rgb(192, 255, 192);
+      color: black;
+      margin: 10px;
+    }
+
+    .title button {
+      background-color: rgb(192, 255, 192);
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .portada img {
+      margin-top: 20px;
+      width: 200px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    #iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">
+    <h1>Super Mario Bros. La Película (AA) (2023) (Pelicula) (2D)</h1>
+    <button onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf', 0)">Pagina Anterior</button>
+  </div>
+
+  <iframe id="iframe" src="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4"></iframe>
+
+  <script>
+    function redirigir(pageId, peliculaId, error) {
+      if (error === 0) {
+        window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + peliculaId;
+      } else {
+        window.location.href = "https://ostwald-ro.github.io/Error/" + error;
+      }
+    }
+  </script>
+</body>
+</html>
