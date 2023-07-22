@@ -1,65 +1,132 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Super Mario Bros. La Película (AA) (2023) (Película) (2D)</title>
-  <style>
-    body {
-      background-color: black;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      color: white;
-    }
-
-    .button-container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin-top: 20px;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      color: white;
-    }
-
-    .button-container button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: rgb(192, 255, 192);
-      color: black;
-      margin: 10px;
-    }
-
-    .title button {
-      background-color: rgb(192, 255, 192);
-      color: black;
-      margin-bottom: 20px;
-    }
-
-    .portada img {
-      margin-top: 20px;
-      width: 200px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="title">
-    <h1>Super Mario Bros. La Película (AA) (2023) (Película) (2D)</h1>
-    <button onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf', 0)">Pagina Anterior</button>
-  </div>
-
-  <iframe id="iframe" src="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4" width="auto" height="auto" frameborder="0" allowfullscreen></iframe>
-
-  <script>
-    function redirigir(pageId, peliculaId, error) {
-      if (error === 0) {
-        window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + peliculaId;
-      } else {
-        window.location.href = "https://ostwald-ro.github.io/Error/" + error;
+  <head>
+    <title>Super Mario Bros. La Película (AA) (2023) (Película) (2D)</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        text-align: center;
+        background-color: black;
+        color: white;
       }
-    }
-  </script>
-</body>
+
+      .button-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        color: white;
+      }
+
+      .button-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgb(192, 255, 192);
+        color: black;
+        margin: 10px;
+      }
+
+      .title button {
+        background-color: rgb(192, 255, 192);
+        color: black;
+        margin-bottom: 20px;
+      }
+
+      .portada img {
+        margin-top: 20px;
+        width: 200px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+    
+      video {
+        max-width: 100%;
+        max-height: calc(100%); /* Ajusta este valor para dejar espacio para el título y el botón */
+        margin: 0;
+      }
+
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-color: rgba(192, 255, 192, 0.8);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .play-button:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 0 15px 25px;
+        border-color: transparent transparent transparent black;
+      }
+
+      video:not([controls]) + .play-button {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Super Mario Bros. La Película (AA) (2023) (Película) (2D)</h1>
+      <button onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf', 0)">Pagina Anterior</button>
+    </div>
+  
+    <video controls autoplay name="media" id="video">
+      <source src="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4" type="video/mp4">
+    </video>
+
+    <div class="play-button" onclick="playPause()">
+      <!-- Símbolo de reproducción (triángulo) -->
+    </div>
+
+    <script>
+      var video = document.getElementById("video");
+      var playButton = document.querySelector(".play-button");
+
+      function redirigir(pageId, peliculaId, error) {
+        if (error === 0) {
+          window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + peliculaId;
+        } else {
+          window.location.href = "https://ostwald-ro.github.io/Error/" + error;
+        }
+      }
+
+      function playPause() {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    
+      // Reproducir automáticamente el video cuando se haya cargado la página
+      document.addEventListener("DOMContentLoaded", function() {
+        video.play();
+        setInterval(function() {
+          if (video.paused) {
+            // playButton.style.display = "block";
+          } else {
+            playButton.style.display = "none";
+          }
+        }, 0);
+      });
+    </script>
+  </body>
 </html>
+ 
