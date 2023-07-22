@@ -8,7 +8,7 @@
       margin: 0;
       padding: 0;
       text-align: center;
-      color: white;
+      color: white;;
     }
 
     .button-container {
@@ -16,7 +16,6 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      margin-top: 20px;
     }
 
     .button-container button {
@@ -28,14 +27,20 @@
       cursor: pointer;
     }
 
+    .button-container .margin {
+      margin-right: 10px;
+    }
+
     .button-container .ver {
-      margin-left: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
       background-color: rgb(192, 192, 255);
       color: black;
     }
 
     .button-container .descargar {
-      margin-left: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
       background-color: rgb(255, 192, 192);
       color: black;
     }
@@ -49,7 +54,6 @@
       margin-top: 20px;
       width: 200px;
       height: auto;
-      margin-bottom: 10px;
     }
 
     .movie-info {
@@ -69,10 +73,10 @@
 
   <div class="movie-info">
     <div class="button-container">
-      <h4>(Tráiler) (2D)</h4>
+      <h4 class="margin">(Tráiler) (2D)</h4>
       <button class="ver" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver</button>
       <!-- <h4>||</h4>
-      <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4" download>
+      <a href=".mp4" download>
         <button class="descargar">Descargar</button>
       </a> -->
     </div>
@@ -80,7 +84,7 @@
 
   <div class="movie-info">
     <div class="button-container">
-      <h4>(Película) (2D)</h4>
+      <h4 class="margin">(Película) (2D)</h4>
       <button class="ver" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Pelicula-2D', 0)">Ver</button>
       <!-- <h4>||</h4>
       <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4" download>
