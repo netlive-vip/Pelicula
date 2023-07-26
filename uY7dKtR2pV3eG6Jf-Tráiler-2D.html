@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Super Mario Bros. La Película (AA) (2023) (Tráiler) (2D)</title>
+    <title id="page-title"></title>
     <style>
       body, html {
         margin: 0;
@@ -64,7 +64,7 @@
   </head>
   <body>
     <div class="title">
-      <h1>Super Mario Bros. La Película (AA) (2023) (Tráiler) (2D)</h1>
+      <h1 id="title">Super Mario Bros. La Película (+7) (2023) (Tráiler) (2D)</h1>
       <button onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf', 0)">Pagina Anterior</button>
     </div>
   
@@ -76,6 +76,9 @@
     </div>
 
     <script>
+      var pageTitle = document.getElementById("page-title");
+      var title = document.getElementById("title");
+      
       var video = document.getElementById("video");
       var playButton = document.querySelector(".play-button");
 
@@ -97,6 +100,8 @@
     
       // Reproducir automáticamente el video cuando se haya cargado la página
       document.addEventListener("DOMContentLoaded", function() {
+        pageTitle.textContent = title.textContent;
+
         video.play();
         setInterval(function() {
           if (video.paused) {

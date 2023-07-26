@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Super Mario Bros. La Película (AA) (2023)</title>
+  <title id="page-title"></title>
   <style>
     body {
       background-color: black;
@@ -69,12 +69,12 @@
 </head>
 <body>
   <div class="title">
-    <h1>Super Mario Bros. La Película (AA) (2023)</h1>
+    <h1 id="title">Super Mario Bros. La Película (7+) (2023)</h1>
     <button onclick="redirigir('OSTWALD', 'Películas', 0)">Página Anterior</button>
   </div>
 
   <div class="portada">
-    <img src="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Portada%29%20%282D%29.jpg">
+    <img src="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Portada%29%20%282D%29.jpg" onerror="this.onerror=null; this.src='https://ostwald-ro.github.io/Error/Imagen.jpg';" alt="Imagen no disponible">
   </div>
 
   <div class="movie-info">
@@ -100,6 +100,9 @@
   </div>
 
   <script>
+    var pageTitle = document.getElementById("page-title");
+    var title = document.getElementById("title");
+    
     function redirigir(pageId, peliculaId, error) {
       if (error === 0) {
         window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + peliculaId;
@@ -107,6 +110,10 @@
         window.location.href = "https://ostwald-ro.github.io/Error/" + error;
       }
     }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      pageTitle.textContent = title.textContent;
+    });
   </script>
 </body>
 </html>
