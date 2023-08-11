@@ -57,6 +57,11 @@
       margin-bottom: 20px;
     }
 
+    .portada {
+      display: flex;
+      flex-direction: row;
+    }
+
     .portada img {
       width: 200px;
       height: auto;
@@ -64,6 +69,23 @@
 
     .movie-info {
       font-size: 20px;
+    }
+    
+    .ruta-texto {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 16px;
+      margin-top: 10px;
+      color: white; /* Cambia el color del texto si es necesario */
+      flex: 1; /* Aprovecha el espacio disponible */
+    }
+
+    .ruta-texto pre {
+      white-space: normal; /* Permite que el texto se ajuste automáticamente y se muestre en varias líneas */
+      text-align: justify; /* Justifica el texto */
+      margin-left: 20px; /* Agrega margen entre la imagen y el texto */
+      margin-right: 20px; /* Agrega margen entre al texto */
     }
   </style>
 </head>
@@ -74,45 +96,104 @@
   </div>
 
   <div class="portada">
+    <div class="ruta-texto">
+      <pre id="texto-contenido-1"></pre>
+    </div>
     <img src="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Portada%29%20%282D%29.jpg" onerror="this.onerror=null; this.src='https://ostwald-ro.github.io/Error/Imagen.jpg';" alt="Imagen no disponible">
+    <div class="ruta-texto">
+      <pre id="texto-contenido-2"></pre>
+    </div>
   </div>
 
   <div class="movie-info">
     <div class="button-container">
-      <h4 class="margin">(Tráiler) (2D)</h4>
-      <!-- <button class="ver" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver</button>
-      <h4>||</h4> -->
-      <button class="ver-descargar" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver || Descargar</button>
-      <!-- <h4>||</h4>
-      <a href=".mp4" download>
+      <h4 class="margin">(Portada) (2D)</h4>
+      <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Portada%29%20%282D%29.jpg" download>
         <button class="descargar">Descargar</button>
-      </a> -->
+      </a>
+
+      <h4 class="margin">(Portada Extendida) (2D)</h4>
+      <button class="ver" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Portada-Extendida-2D', 404)">Ver</button>
+      <h4>||</h4>
+      <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Portada%20Extendida%29%20%282D%29.jpg" download>
+        <button class="descargar">Descargar</button>
+      </a>
+
+    </div>
+    <div class="button-container">
+
+      <h4 class="margin">(Descripción) (2D)</h4>
+      <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Descripci%C3%B3n%29.txt" download>
+        <button class="descargar">Descargar</button>
+      </a>
+
+    </div>
+    <div class="button-container">
+
+      <h4 class="margin">(Tráiler) (2D)</h4>
+      <button class="ver" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver</button>
+      <h4>||</h4>
+      <!-- <button class="ver-descargar" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver || Descargar</button>
+      <h4>||</h4> -->
+      <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Tr%C3%A1iler%29%20%282D%29.mp4" download>
+        <button class="descargar">Descargar</button>
+      </a>
 
       <h4 class="margin">(Película) (2D)</h4>
-      <!-- <button class="ver" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Película-2D', 0)">Ver</button>
+      <button class="ver" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Película-2D', 0)">Ver</button>
+      <h4>||</h4>
+      <!-- <button class="ver-descargar" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Película-2D', 0)">Ver || Descargar</button>
       <h4>||</h4> -->
-      <button class="ver-descargar" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Película-2D', 0)">Ver || Descargar</button>
-      <!-- <h4>||</h4>
-      <a href=".mp4" download>
+      <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4" download>
         <button class="descargar">Descargar</button>
-      </a> -->
+      </a>
     </div>
   </div>
 
   <script>
     var pageTitle = document.getElementById("page-title");
     var title = document.getElementById("title");
+    var textoContenido1 = document.getElementById("texto-contenido-1");
+    var textoContenido2 = document.getElementById("texto-contenido-2");
     
-    function redirigir(pageId, peliculaId, error) {
+    function redirigir(plataformaId, pageId, elementoId, error) {
       if (error === 0) {
-        window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + peliculaId;
+        if (plataformaId === 1) {
+          window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + elementoId;
+        } else
+        if (plataformaId === 2) {
+          window.location.href = "https://archive.org/download" + pageId + "/"  + elementoId;
+        } else
+        if (plataformaId === 3) {
+          window.location.href = "https://www.dailymotion.com/" + pageId + "/"  + elementoId;
+        }
       } else {
         window.location.href = "https://ostwald-ro.github.io/Error/" + error;
       }
     }
-    
+
     document.addEventListener("DOMContentLoaded", function() {
       pageTitle.textContent = title.textContent;
+
+      // Cargar y mostrar el contenido del archivo .txt
+      fetch("https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282023%29%20%28Descripci%C3%B3n%201%29.txt")
+        .then(response => response.text())
+        .then(data => {
+          textoContenido1.textContent = data;
+        })
+        .catch(error => {
+          textoContenido1.textContent = "No se encuentra descripción.";
+        });
+
+        // Cargar y mostrar el contenido del archivo .txt
+      fetch("https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282023%29%20%28Descripci%C3%B3n%202%29.txt")
+        .then(response => response.text())
+        .then(data => {
+          textoContenido2.textContent = data;
+        })
+        .catch(error => {
+          textoContenido2.textContent = "No se encuentra descripción.";
+        });
     });
   </script>
 </body>
