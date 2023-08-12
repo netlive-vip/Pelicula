@@ -11,10 +11,6 @@
         text-align: center;
         background-color: black;
         color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
       }
       
       .title button {
@@ -25,16 +21,14 @@
 
       .video-container {
         width: 100%;
-        max-height: 100%;
-        height: auto; /* Ajusta este valor para dejar espacio para el título y el botón */
+        max-height: 100%; /* Ajusta el valor según tus necesidades */
         overflow: hidden;
         position: relative;
       }
 
-      video {
+      .video-container iframe {
         width: 100%;
         height: 100%;
-        object-fit: cover;
       }
 
       .play-button {
@@ -69,10 +63,7 @@
     </div>
   
     <div class="video-container">
-      <video controls autoplay name="media" id="video">
-        <source src="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Tr%C3%A1iler%29%20%282D%29.mp4" type="video/mp4">
-      </video>
-      <div class="play-button" onclick="playPause()"></div>
+      <iframe width="100%" src="https://ok.ru/videoembed/6706794793550" frameborder="0" allow="autoplay" allowfullscreen></iframe>
     </div>
 
     <script>
@@ -102,6 +93,21 @@
       document.addEventListener("DOMContentLoaded", function() {
         pageTitle.textContent = title.textContent;
 
+        var videoContainer = document.querySelector(".video-container");
+        var iframe = videoContainer.querySelector("iframe");
+
+        // Ajustar altura del iframe al cargar y redimensionar la ventana
+        function adjustIframeHeight() {
+          var windowHeight = window.innerHeight;
+          var containerRect = videoContainer.getBoundingClientRect();
+          var newIframeHeight = windowHeight - containerRect.top - 20; // Ajusta según el espacio deseado
+
+          iframe.style.height = newIframeHeight + "px";
+        }
+
+        adjustIframeHeight(); // Ajustar altura inicial
+        window.addEventListener("resize", adjustIframeHeight);
+        
         video.play();
         setInterval(function() {
           if (video.paused) {
