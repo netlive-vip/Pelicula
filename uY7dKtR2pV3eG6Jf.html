@@ -92,7 +92,7 @@
 <body>
   <div class="title">
     <h1 id="title">Super Mario Bros. La Película (7+) (2023)</h1>
-    <button onclick="redirigir(1, 'OSTWALD', 'Películas', 0)">Página Anterior</button>
+    <button onclick="redirigir('OSTWALD', 'Películas', 0)">Página Anterior</button>
   </div>
 
   <div class="portada">
@@ -108,14 +108,14 @@
   <div class="movie-info">
     <div class="button-container">
       <h4 class="margin">(Portada) (2D)</h4>
-      <button class="ver" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Portada-2D', 0)">Ver</button>
+      <button class="ver" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Portada-2D', 0)">Ver</button>
       <h4>||</h4>
       <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Portada%29%20%282D%29.jpg" download>
         <button class="descargar">Descargar</button>
       </a>
 
       <h4 class="margin">(Portada Extendida) (2D)</h4>
-      <button class="ver" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Portada-Extendida-2D', 0)">Ver</button>
+      <button class="ver" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Portada-Extendida-2D', 0)">Ver</button>
       <h4>||</h4>
       <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Portada%20Extendida%29%20%282D%29.jpg" download>
         <button class="descargar">Descargar</button>
@@ -133,18 +133,18 @@
     <div class="button-container">
 
       <h4 class="margin">(Tráiler) (2D)</h4>
-      <button class="ver" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver</button>
+      <button class="ver" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver</button>
       <h4>||</h4>
-      <!-- <button class="ver-descargar" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver || Descargar</button>
+      <!-- <button class="ver-descargar" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Tráiler-2D', 0)">Ver || Descargar</button>
       <h4>||</h4> -->
       <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Tr%C3%A1iler%29%20%282D%29.mp4" download>
         <button class="descargar">Descargar</button>
       </a>
 
       <h4 class="margin">(Película) (2D)</h4>
-      <button class="ver" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Película-2D', 0)">Ver</button>
+      <button class="ver" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Película-2D', 0)">Ver</button>
       <h4>||</h4>
-      <!-- <button class="ver-descargar" onclick="redirigir(1, 'Pelicula', 'uY7dKtR2pV3eG6Jf-Película-2D', 0)">Ver || Descargar</button>
+      <!-- <button class="ver-descargar" onclick="redirigir('Pelicula', 'uY7dKtR2pV3eG6Jf-Película-2D', 0)">Ver || Descargar</button>
       <h4>||</h4> -->
       <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28AA%29%20%282023%29%20%28Pelicula%29%20%282D%29.mp4" download>
         <button class="descargar">Descargar</button>
@@ -158,17 +158,9 @@
     var textoContenido1 = document.getElementById("texto-contenido-1");
     var textoContenido2 = document.getElementById("texto-contenido-2");
     
-    function redirigir(plataformaId, pageId, elementoId, error) {
+    function redirigir(pageId, elementoId, error) {
       if (error === 0) {
-        if (plataformaId === 1) {
-          window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + elementoId;
-        } else
-        if (plataformaId === 2) {
-          window.location.href = "https://archive.org/download" + pageId + "/"  + elementoId;
-        } else
-        if (plataformaId === 3) {
-          window.location.href = "https://www.dailymotion.com/" + pageId + "/"  + elementoId;
-        }
+        window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + elementoId;
       } else {
         window.location.href = "https://ostwald-ro.github.io/Error/" + error;
       }
