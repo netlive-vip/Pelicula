@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="page-title"></title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button-container button {
+      padding: auto;
+      font-size: 20px;
+      border: none;
+      color: black;
+      cursor: pointer;
+    }
+
+    .button-container .margin {
+      margin-left: 20px;
+    }
+
+    .button-container .ver {
+      margin-left: 10px;
+      margin-right: 10px;
+      background-color: rgb(192, 192, 255);
+      color: black;
+    }
+
+    .button-container .ver-descargar {
+      margin-left: 10px;
+      margin-right: 10px;
+      background-color: rgb(192, 255, 192);
+      color: black;
+    }
+
+    .button-container .descargar {
+      margin-left: 10px;
+      margin-right: 10px;
+      background-color: rgb(255, 192, 192);
+      color: black;
+    }
+
+    .title button {
+      background-color: rgb(192, 255, 192);
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .portada {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .portada img {
+      width: 200px;
+      height: auto;
+    }
+
+    .movie-info {
+      font-size: 20px;
+    }
+    
+    .ruta-texto {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 16px;
+      margin-top: 10px;
+      color: white; /* Cambia el color del texto si es necesario */
+      flex: 1; /* Aprovecha el espacio disponible */
+    }
+
+    .ruta-texto pre {
+      white-space: normal; /* Permite que el texto se ajuste automáticamente y se muestre en varias líneas */
+      text-align: justify; /* Justifica el texto */
+      margin-left: 20px; /* Agrega margen entre la imagen y el texto */
+      margin-right: 20px; /* Agrega margen entre al texto */
+    }
+  </style>
+</head>
+<body>
+  <div class="title">
+    <h1 id="title">Escandalosos. La Película (7+) (2020)</h1>
+    <button onclick="redirigir('OSTWALD', 'Películas', 0)">Página Anterior</button>
+  </div>
+
+  <div class="portada">
+    <div class="ruta-texto">
+      <pre id="texto-contenido-1"></pre>
+    </div>
+    <img src="https://archive.org/download/bX6uGdZ8pH7mY4iA/Escandalosos.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282020%29%20%28Portada%29%20%282D%29.jpg" onerror="this.onerror=null; this.src='https://ostwald-ro.github.io/Error/Imagen.jpg';" alt="Imagen no disponible">
+    <div class="ruta-texto">
+      <pre id="texto-contenido-2"></pre>
+    </div>
+  </div>
+
+  <div class="movie-info">
+    <div class="button-container">
+      <h4 class="margin">(Portada) (2D)</h4>
+      <button class="ver" onclick="redirigir('Pelicula', 'bX6uGdZ8pH7mY4iA-Portada-2D', 0)">Ver</button>
+      <h4>||</h4>
+      <a href="https://archive.org/download/bX6uGdZ8pH7mY4iA/Escandalosos.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282020%29%20%28Portada%29%20%282D%29.jpg" download>
+        <button class="descargar">Descargar</button>
+      </a>
+
+      <h4 class="margin">(Descripción) (2D)</h4>
+      <a href="https://archive.org/download/bX6uGdZ8pH7mY4iA/Escandalosos.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282020%29%20%28Descripci%C3%B3n%29.txt" download>
+        <button class="descargar">Descargar</button>
+      </a>
+
+    </div>
+    <div class="button-container">
+
+      <h4 class="margin">(Tráiler) (2D)</h4>
+      <button class="ver" onclick="redirigir('Pelicula', 'bX6uGdZ8pH7mY4iA-Tráiler-2D', 0)">Ver</button>
+      <h4>||</h4>
+      <!-- <button class="ver-descargar" onclick="redirigir('Pelicula', 'bX6uGdZ8pH7mY4iA-Tráiler-2D', 0)">Ver || Descargar</button>
+      <h4>||</h4> -->
+      <a href="https://archive.org/download/bX6uGdZ8pH7mY4iA/Escandalosos.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282020%29%20%28Tr%C3%A1iler%29%20%282D%29.mp4" download>
+        <button class="descargar">Descargar</button>
+      </a>
+
+      <h4 class="margin">(Película) (2D)</h4>
+      <button class="ver" onclick="redirigir('Pelicula', 'bX6uGdZ8pH7mY4iA-Película-2D', 0)">Ver</button>
+      <h4>||</h4>
+      <!-- <button class="ver-descargar" onclick="redirigir('Pelicula', 'bX6uGdZ8pH7mY4iA-Película-2D', 0)">Ver || Descargar</button>
+      <h4>||</h4> -->
+      <a href="https://archive.org/download/bX6uGdZ8pH7mY4iA/Escandalosos.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282020%29%20%28Pel%C3%ADcula%29%20%282D%29.mp4" download>
+        <button class="descargar">Descargar</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    var pageTitle = document.getElementById("page-title");
+    var title = document.getElementById("title");
+    var textoContenido1 = document.getElementById("texto-contenido-1");
+    var textoContenido2 = document.getElementById("texto-contenido-2");
+    
+    function redirigir(pageId, elementoId, error) {
+      if (error === 0) {
+        window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + elementoId;
+      } else {
+        window.location.href = "https://ostwald-ro.github.io/Error/" + error;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      pageTitle.textContent = title.textContent;
+
+      // Cargar y mostrar el contenido del archivo .txt
+      fetch("https://archive.org/download/bX6uGdZ8pH7mY4iA/Escandalosos.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282020%29%20%28Descripci%C3%B3n%201%29.txt")
+        .then(response => response.text())
+        .then(data => {
+          textoContenido1.textContent = data;
+        })
+        .catch(error => {
+          textoContenido1.textContent = "Descripción no disponible.";
+        });
+
+        // Cargar y mostrar el contenido del archivo .txt
+      fetch("https://archive.org/download/bX6uGdZ8pH7mY4iA/Escandalosos.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282020%29%20%28Descripci%C3%B3n%202%29.txt")
+        .then(response => response.text())
+        .then(data => {
+          textoContenido2.textContent = data;
+        })
+        .catch(error => {
+          textoContenido2.textContent = "Descripción no disponible.";
+        });
+    });
+  </script>
+</body>
+</html>

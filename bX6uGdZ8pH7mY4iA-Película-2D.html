@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="page-title"></title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: black;
+        color: white;
+      }
+      
+      .title button {
+        background-color: rgb(192, 255, 192);
+        color: black;
+        margin-bottom: 20px;
+      }
+
+      .video-container {
+        width: 100%;
+        max-height: 100%; /* Ajusta el valor según tus necesidades */
+        overflow: hidden;
+        position: relative;
+      }
+
+      .video-container iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-color: rgb(192, 255, 192);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .play-button:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 0 15px 25px;
+        border-color: transparent transparent transparent black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1 id="title">Super Mario Bros. La Película (+7) (2023) (Película) (2D)</h1>
+      <button onclick="redirigir('Pelicula', 'bX6uGdZ8pH7mY4iA', 0)">Pagina Anterior</button>
+    </div>
+  
+    <div class="video-container">
+      <iframe width="100%" src="https://ok.ru/videoembed/6710466513486" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    </div>
+
+    <script>
+      var pageTitle = document.getElementById("page-title");
+      var title = document.getElementById("title");
+      
+      var video = document.getElementById("video");
+      var playButton = document.querySelector(".play-button");
+
+      function redirigir(pageId, peliculaId, error) {
+        if (error === 0) {
+          window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + peliculaId;
+        } else {
+          window.location.href = "https://ostwald-ro.github.io/Error/" + error;
+        }
+      }
+
+      function playPause() {
+        if (video.paused) {
+          video.play();
+        } else {
+          video.pause();
+        }
+      }
+    
+      // Reproducir automáticamente el video cuando se haya cargado la página
+      document.addEventListener("DOMContentLoaded", function() {
+        pageTitle.textContent = title.textContent;
+
+        var videoContainer = document.querySelector(".video-container");
+        var iframe = videoContainer.querySelector("iframe");
+
+        // Ajustar altura del iframe al cargar y redimensionar la ventana
+        function adjustIframeHeight() {
+          var windowHeight = window.innerHeight;
+          var containerRect = videoContainer.getBoundingClientRect();
+          var newIframeHeight = windowHeight - containerRect.top - 20; // Ajusta según el espacio deseado
+
+          iframe.style.height = newIframeHeight + "px";
+        }
+
+        adjustIframeHeight(); // Ajustar altura inicial
+        window.addEventListener("resize", adjustIframeHeight);
+        
+        video.play();
+        setInterval(function() {
+          if (video.paused) {
+            playButton.style.display = "block";
+          } else {
+            playButton.style.display = "none";
+          }
+        }, 0);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title id="page-title"></title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .title button {
+        background-color: rgb(192, 255, 192);
+        color: black;
+        margin-bottom: 20px;
+      }
+
+      .image-container {
+        width: auto;
+        max-width: 100%;
+        height: 100%; /* Ajusta este valor para dejar espacio para el título y el botón */
+        overflow: hidden;
+        position: relative;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">
+      <h1 id="title">Super Mario Bros. La Película (+7) (2023) (Portada) (2D)</h1>
+      <button onclick="redirigir('Pelicula', 'bX6uGdZ8pH7mY4iA', 0)">Pagina Anterior</button>
+    </div>
+  
+    <div class="image-container">
+      <img src="https://archive.org/download/bX6uGdZ8pH7mY4iA/Escandalosos.%20La%20Pel%C3%ADcula%20%28%2B7%29%20%282020%29%20%28Portada%29%20%282D%29.jpg" onerror="this.onerror=null; this.src='https://ostwald-ro.github.io/Error/Imagen.jpg';" alt="Imagen no disponible">
+    </div>
+
+    <script>
+      var pageTitle = document.getElementById("page-title");
+      var title = document.getElementById("title");
+
+      function redirigir(pageId, diagramaId, error) {
+        if (error === 0) {
+          window.location.href = "https://ostwald-ro.github.io/" + pageId + "/" + diagramaId;
+        } else {
+          window.location.href = "https://ostwald-ro.github.io/Error/" + error;
+        }
+      }
+    
+      // Reproducir automáticamente el video cuando se haya cargado la página
+      document.addEventListener("DOMContentLoaded", function() {
+        pageTitle.textContent = title.textContent;
+      });
+    </script>
+  </body>
+</html>
