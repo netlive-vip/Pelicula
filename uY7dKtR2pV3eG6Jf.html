@@ -124,7 +124,7 @@
     </div>
     <div class="button-container">
 
-      <h4 class="margin">(Descripción) (2D)</h4>
+      <h4 class="margin">(Descripción)</h4>
       <a href="https://archive.org/download/uY7dKtR2pV3eG6Jf/Super%20Mario%20Bros.%20La%20Pel%C3%ADcula%20%28+7%29%20%282023%29%20%28Descripci%C3%B3n%29.txt" download>
         <button class="descargar">Descargar</button>
       </a>
@@ -176,7 +176,7 @@
           textoContenido1.textContent = data;
         })
         .catch(error => {
-          textoContenido1.textContent = "No se encuentra descripción.";
+          textoContenido1.textContent = "Descripción no disponible.";
         });
 
         // Cargar y mostrar el contenido del archivo .txt
@@ -186,7 +186,7 @@
           textoContenido2.textContent = data;
         })
         .catch(error => {
-          textoContenido2.textContent = "No se encuentra descripción.";
+          textoContenido2.textContent = "Descripción no disponible.";
         });
     });
   </script>
